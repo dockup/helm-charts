@@ -15,12 +15,12 @@ service:
 
 ingress:
   enabled: false
-  annotations: {}
-    # kubernetes.io/ingress.class: nginx
+  annotations:
+    kubernetes.io/ingress.class: nginx
     # kubernetes.io/tls-acme: "true"
   path: /
   hosts:
-    - chart-example.local
+    - dockup.yourdomain.com
   tls: []
   #  - secretName: chart-example-tls
   #    hosts:
@@ -43,3 +43,6 @@ nodeSelector: {}
 tolerations: []
 
 affinity: {}
+
+helm:
+  tillerNamespace: kube-system

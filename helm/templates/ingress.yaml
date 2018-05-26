@@ -5,6 +5,7 @@ apiVersion: extensions/v1beta1
 kind: Ingress
 metadata:
   name: {{ $fullName }}
+  namespace: dockup
   labels:
     app: {{ template "dockup.name" . }}
     chart: {{ template "dockup.chart" . }}
