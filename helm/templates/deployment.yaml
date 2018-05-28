@@ -19,6 +19,7 @@ spec:
         app: {{ template "dockup.name" . }}
         release: {{ .Release.Name }}
     spec:
+      serviceAccount: dockup
       containers:
         - name: {{ .Chart.Name }}
           image: "{{ .Values.image.repository }}:{{ .Values.image.tag }}"
