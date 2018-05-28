@@ -19,8 +19,7 @@ ingress:
     kubernetes.io/ingress.class: traefik
     # kubernetes.io/tls-acme: "true"
   path: /
-  hosts:
-    - dockup.yourdomain.com
+  host: dockup.yourdomain.com
   tls: []
   #  - secretName: chart-example-tls
   #    hosts:
@@ -46,3 +45,7 @@ affinity: {}
 
 helm:
   tillerNamespace: kube-system
+
+postgresql:
+  postgresUser: user
+  postgresPassword: secret
