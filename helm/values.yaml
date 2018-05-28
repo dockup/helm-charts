@@ -5,7 +5,7 @@
 replicaCount: 1
 
 image:
-  repository: nginx
+  repository: codemancers/dockup
   tag: stable
   pullPolicy: IfNotPresent
 
@@ -16,7 +16,7 @@ service:
 ingress:
   enabled: false
   annotations:
-    kubernetes.io/ingress.class: nginx
+    kubernetes.io/ingress.class: traefik
     # kubernetes.io/tls-acme: "true"
   path: /
   hosts:
