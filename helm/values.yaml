@@ -14,7 +14,7 @@ service:
   port: 80
 
 ingress:
-  enabled: false
+  enabled: true
   annotations:
     kubernetes.io/ingress.class: traefik
     # kubernetes.io/tls-acme: "true"
@@ -49,3 +49,31 @@ helm:
 postgresql:
   postgresUser: user
   postgresPassword: secret
+
+traefik:
+  enabled: true
+  ssl:
+    enabled: true
+    enforced: true
+    email: "youremail@yourdomain.com"
+  acme:
+    enabled: true
+    staging: false
+    logging: true
+    challengeType: "dns-01"
+    domain:
+      enabled: true
+      main: "*.yourdomain.com"
+  dashboard:
+    enabled: true
+    domain: "traefik.yourdomain.com"
+  service:
+    nodePorts:
+      http: "80"
+      https: "443"
+  rbac:
+    enabled: true
+  deployment:
+    hostPort:
+      httpsEnabled: true
+      dashboardEnabled: true
