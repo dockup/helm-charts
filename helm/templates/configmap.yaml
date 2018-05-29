@@ -9,3 +9,5 @@ data:
   POSTGRES_PASSWORD: {{ .Values.postgresql.postgresPassword }}
   POSTGRES_USER: {{ .Values.postgresql.postgresUser }}
   SLACK_WEBHOOK_URL: "https://hooks.slack.com/services/token"
+  GIT_HTTPS_USERNAME: {{ .Values.gitAccess.httpsUsername }}
+  GIT_HTTPS_PASSWORD: {{ .Values.gitAccess.httpsPassword }}

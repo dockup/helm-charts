@@ -43,6 +43,10 @@ tolerations: []
 
 affinity: {}
 
+gitAccess:
+  httpsUsername: null
+  httpsPassword: null
+
 helm:
   tillerNamespace: kube-system
 
