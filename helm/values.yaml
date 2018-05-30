@@ -19,7 +19,8 @@ ingress:
     kubernetes.io/ingress.class: traefik
     # kubernetes.io/tls-acme: "true"
   path: /
-  host: dockup.yourdomain.com
+  hosts:
+    - dockup.yourdomain.com
   tls: []
   #  - secretName: chart-example-tls
   #    hosts:
@@ -67,7 +68,7 @@ traefik:
     challengeType: "dns-01"
     domain:
       enabled: true
-      main: "*.yourdomain.com"
+      main: "*.dockup.yourdomain.com"
   dashboard:
     enabled: true
     domain: "traefik.yourdomain.com"
