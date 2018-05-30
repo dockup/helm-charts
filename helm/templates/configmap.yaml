@@ -11,3 +11,4 @@ data:
   SLACK_WEBHOOK_URL: "https://hooks.slack.com/services/token"
   GIT_HTTPS_USERNAME: {{ .Values.gitAccess.httpsUsername }}
   GIT_HTTPS_PASSWORD: {{ .Values.gitAccess.httpsPassword }}
+  DOCKUP_BACKEND: helm
