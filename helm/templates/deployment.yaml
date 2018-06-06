@@ -59,3 +59,17 @@ spec:
       tolerations:
 {{ toYaml . | indent 8 }}
     {{- end }}
+      initContainers:
+        - name: {{ .Chart.Name }}-migrations
+          image: "{{ .Values.image.repository }}:{{ .Values.image.tag }}"
+          imagePullPolicy: {{ .Values.image.pullPolicy }}
+          env:
+            {{- $configMapName := include "dockup.fullname" . -}}
+            {{- range .Files.Lines "dot-env-file" }}
+            - name: {{ . }}
+              valueFrom:
+                configMapKeyRef:
+                  name: {{ $configMapName }}
+                  key: {{ . }}
+            {{- end }}
+          command: ["/dockup/_build/prod/rel/dockup/bin/dockup", "migrate"]
