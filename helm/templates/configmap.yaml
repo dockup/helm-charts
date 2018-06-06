@@ -6,9 +6,9 @@ data:
   MIX_ENV: prod
   DOCKUP_WORKDIR: "/workdir"
   DOCKUP_BASE_DOMAIN: "{{ .Values.baseDomain }}"
-  POSTGRES_HOST: {{ .Release.Name }}-postgresql
-  POSTGRES_PASSWORD: {{ .Values.postgresql.postgresPassword }}
-  POSTGRES_USER: {{ .Values.postgresql.postgresUser }}
+  PGHOST: {{ .Release.Name }}-postgresql
+  PGPASSWORD: {{ .Values.postgresql.postgresPassword }}
+  PGUSER: {{ .Values.postgresql.postgresUser }}
   SLACK_WEBHOOK_URL: "https://hooks.slack.com/services/token"
   GIT_HTTPS_USERNAME: {{ .Values.gitAccess.httpsUsername }}
   GIT_HTTPS_PASSWORD: {{ .Values.gitAccess.httpsPassword }}
