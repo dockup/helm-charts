@@ -20,7 +20,7 @@ ingress:
     # kubernetes.io/tls-acme: "true"
   path: /
   hosts:
-    - dockup.yourdomain.com
+    - ui.dockup.yourdomain.com
   tls: []
   #  - secretName: chart-example-tls
   #    hosts:
@@ -48,6 +48,8 @@ gitAccess:
   httpsUsername: null
   httpsPassword: null
 
+baseDomain: "dockup.yourdomain.com"
+
 helm:
   tillerNamespace: kube-system
 
@@ -71,7 +73,7 @@ traefik:
       main: "*.dockup.yourdomain.com"
   dashboard:
     enabled: true
-    domain: "traefik.yourdomain.com"
+    domain: "traefik.dockup.yourdomain.com"
   service:
     nodePorts:
       http: "80"

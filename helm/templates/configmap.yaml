@@ -5,7 +5,7 @@ metadata:
 data:
   MIX_ENV: prod
   DOCKUP_WORKDIR: "/workdir"
-  DOCKUP_DOMAIN: "{{ .Values.ingress.hosts | first }}"
+  DOCKUP_BASE_DOMAIN: "{{ .Values.baseDomain }}"
   POSTGRES_HOST: {{ .Release.Name }}-postgresql
   POSTGRES_PASSWORD: {{ .Values.postgresql.postgresPassword }}
   POSTGRES_USER: {{ .Values.postgresql.postgresUser }}
