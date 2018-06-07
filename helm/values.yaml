@@ -59,6 +59,10 @@ postgresql:
 
 traefik:
   enabled: true
+  cpuRequest: 200m
+  memoryRequest: 80Mi
+  cpuLimit: 200m
+  memoryLimit: 200Mi
   ssl:
     enabled: true
     enforced: true
