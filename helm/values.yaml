@@ -50,6 +50,9 @@ gitAccess:
 
 baseDomain: "dockup.yourdomain.com"
 
+# Stackdriver url, which is applicable for GKE based helm backend
+stackdriverUrl: "https://console.cloud.google.com/logs/viewer?project=<your-project-name>&resource=container%2Fcluster_name%2Fdockup"
+
 # This url will be used to send notifications to Slack
 slackWebhookUrl: "https://hooks.slack.com/services/token"
 

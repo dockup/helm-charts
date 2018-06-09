@@ -13,3 +13,4 @@ data:
   GIT_HTTPS_USERNAME: {{ .Values.gitAccess.httpsUsername }}
   GIT_HTTPS_PASSWORD: {{ .Values.gitAccess.httpsPassword }}
   DOCKUP_BACKEND: helm
+  DOCKUP_STACKDRIVER_URL: {{ .Values.stackdriverUrl }}
