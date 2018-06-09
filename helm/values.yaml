@@ -50,6 +50,9 @@ gitAccess:
 
 baseDomain: "dockup.yourdomain.com"
 
+# This url will be used to send notifications to Slack
+slackWebhookUrl: "https://hooks.slack.com/services/token"
+
 helm:
   tillerNamespace: kube-system
 

@@ -9,7 +9,7 @@ data:
   PGHOST: {{ .Release.Name }}-postgresql
   PGPASSWORD: {{ .Values.postgresql.postgresPassword }}
   PGUSER: {{ .Values.postgresql.postgresUser }}
-  SLACK_WEBHOOK_URL: "https://hooks.slack.com/services/token"
+  SLACK_WEBHOOK_URL: {{ .Values.slackWebhookUrl }}
   GIT_HTTPS_USERNAME: {{ .Values.gitAccess.httpsUsername }}
   GIT_HTTPS_PASSWORD: {{ .Values.gitAccess.httpsPassword }}
   DOCKUP_BACKEND: helm
