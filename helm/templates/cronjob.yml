@@ -1,0 +1,53 @@
+apiVersion: batch/v1beta1
+kind: CronJob
+metadata:
+  name: {{ template "dockup.fullname" . }}-hibernate
+spec:
+  schedule: {{ .Values.hibernateAllAt }}
+  jobTemplate:
+    spec:
+      template:
+        spec:
+          serviceAccount: dockup
+          containers:
+          - name: {{ .Chart.Name }}-hibernate
+            image: "{{ .Values.image.repository }}:{{ .Values.image.tag }}"
+            imagePullPolicy: {{ .Values.image.pullPolicy }}
+            env:
+              {{- $configMapName := include "dockup.fullname" . -}}
+              {{- range .Files.Lines "dot-env-file" }}
+              - name: {{ . }}
+                valueFrom:
+                  configMapKeyRef:
+                    name: {{ $configMapName }}
+                    key: {{ . }}
+              {{- end }}
+            command: ["/dockup/_build/prod/rel/dockup/bin/dockup", "hibernate"]
+          restartPolicy: OnFailure
+---
+apiVersion: batch/v1beta1
+kind: CronJob
+metadata:
+  name: {{ template "dockup.fullname" . }}-wake-up
+spec:
+  schedule: {{ .Values.wakeUpAllAt }}
+  jobTemplate:
+    spec:
+      template:
+        spec:
+          serviceAccount: dockup
+          containers:
+          - name: {{ .Chart.Name }}-wake-up
+            image: "{{ .Values.image.repository }}:{{ .Values.image.tag }}"
+            imagePullPolicy: {{ .Values.image.pullPolicy }}
+            env:
+              {{- $configMapName := include "dockup.fullname" . -}}
+              {{- range .Files.Lines "dot-env-file" }}
+              - name: {{ . }}
+                valueFrom:
+                  configMapKeyRef:
+                    name: {{ $configMapName }}
+                    key: {{ . }}
+              {{- end }}
+            command: ["/dockup/_build/prod/rel/dockup/bin/dockup", "wake_up"]
+          restartPolicy: OnFailure
