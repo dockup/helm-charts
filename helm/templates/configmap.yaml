@@ -14,3 +14,5 @@ data:
   GIT_HTTPS_PASSWORD: {{ .Values.gitAccess.httpsPassword }}
   DOCKUP_BACKEND: helm
   DOCKUP_STACKDRIVER_URL: {{ .Values.stackdriverUrl }}
+  DOCKUP_MAX_CONCURRENT_DEPLOYMENTS: "{{ .Values.maxConcurrentDeployments }}"
+  DOCKUP_MAX_CONCURRENT_BUILDS: "{{ .Values.maxConcurrentBuilds }}"

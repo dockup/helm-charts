@@ -50,6 +50,9 @@ gitAccess:
 
 baseDomain: "dockup.yourdomain.com"
 
+maxConcurrentDeployments: 10
+maxConcurrentBuilds: 10
+
 # Stackdriver url, which is applicable for GKE based helm backend
 stackdriverUrl: "https://console.cloud.google.com/logs/viewer?project=<your-project-name>&resource=container%2Fcluster_name%2Fdockup"
 
