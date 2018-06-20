@@ -16,3 +16,5 @@ data:
   DOCKUP_STACKDRIVER_URL: {{ .Values.stackdriverUrl }}
   DOCKUP_MAX_CONCURRENT_DEPLOYMENTS: "{{ .Values.maxConcurrentDeployments }}"
   DOCKUP_MAX_CONCURRENT_BUILDS: "{{ .Values.maxConcurrentBuilds }}"
+  DOCKUP_HIBERNATE_ALL_AT: "{{ .Values.hibernateAllAt }}"
+  DOCKUP_WAKEUP_ALL_AT: "{{ .Values.wakeUpAllAt }}"

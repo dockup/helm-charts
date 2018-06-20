@@ -59,11 +59,11 @@ stackdriverUrl: "https://console.cloud.google.com/logs/viewer?project=<your-proj
 # This url will be used to send notifications to Slack
 slackWebhookUrl: "https://hooks.slack.com/services/token"
 
-# Hibernate all successfully deployed deployments at 8pm everyday
-hibernateAllAt: "0 20 * * *"
+# Hibernate all successfully deployed deployments everyday
+hibernateAllAt: "-1"            # "20:00:00" for 8pm UTC
 
-# Wake up all hibernated deployments at 8am everyday
-wakeUpAllAt: "0 8 * * *"
+# Wake up all hibernated deployments everyday
+wakeUpAllAt: "-1"               # "08:00:00" for 8am UTC
 
 helm:
   tillerNamespace: kube-system
