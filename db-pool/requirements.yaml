@@ -1,0 +1,8 @@
+dependencies:
+  - name: postgresql
+    version: "0.13.0"
+    repository: "https://kubernetes-charts.storage.googleapis.com"
+  - name: mysql
+    version: "0.6.0"
+    repository: "https://kubernetes-charts.storage.googleapis.com"
+    condition: mysql.enabled

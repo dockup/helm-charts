@@ -5,8 +5,8 @@
 replicaCount: 1
 
 image:
-  repository: nginx
-  tag: stable
+  repository: codemancers/db-pool
+  tag: latest
   pullPolicy: IfNotPresent
 
 service:
@@ -14,13 +14,13 @@ service:
   port: 80
 
 ingress:
-  enabled: false
-  annotations: {}
-    # kubernetes.io/ingress.class: nginx
+  enabled: true
+  annotations:
+    kubernetes.io/ingress.class: traefik
     # kubernetes.io/tls-acme: "true"
   path: /
   hosts:
-    - chart-example.local
+    - db-pool.yourdomain.com
   tls: []
   #  - secretName: chart-example-tls
   #    hosts:
@@ -43,3 +43,14 @@ nodeSelector: {}
 tolerations: []
 
 affinity: {}
+
+# Postgresql settings
+postgresql:
+  postgresUser: user
+  postgresPassword: secret
+
+# Mysql settings
+mysql:
+  enabled: true
+  sqlDumpUrl: "mandatory-one-to-be-specified"
+  mysqlRootPassword: root

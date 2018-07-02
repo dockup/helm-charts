@@ -25,7 +25,7 @@ spec:
           imagePullPolicy: {{ .Values.image.pullPolicy }}
           ports:
             - name: http
-              containerPort: 80
+              containerPort: 4000
               protocol: TCP
           livenessProbe:
             httpGet:
@@ -35,6 +35,15 @@ spec:
             httpGet:
               path: /
               port: http
+          env:
+            {{- $configMapName := include "db-pool.fullname" . -}}
+            {{- range .Files.Lines "dot-env-file" }}
+            - name: {{ . }}
+              valueFrom:
+                configMapKeyRef:
+                  name: {{ $configMapName }}
+                  key: {{ . }}
+            {{- end }}
           resources:
 {{ toYaml .Values.resources | indent 12 }}
     {{- with .Values.nodeSelector }}
@@ -49,3 +58,17 @@ spec:
       tolerations:
 {{ toYaml . | indent 8 }}
     {{- end }}
+      initContainers:
+        - name: {{ .Chart.Name }}-migrations
+          image: "{{ .Values.image.repository }}:{{ .Values.image.tag }}"
+          imagePullPolicy: {{ .Values.image.pullPolicy }}
+          env:
+            {{- $configMapName := include "db-pool.fullname" . -}}
+            {{- range .Files.Lines "dot-env-file" }}
+            - name: {{ . }}
+              valueFrom:
+                configMapKeyRef:
+                  name: {{ $configMapName }}
+                  key: {{ . }}
+            {{- end }}
+          command: ["/db-pool/_build/prod/rel/db_pool/bin/db_pool", "migrate"]
