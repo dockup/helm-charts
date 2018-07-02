@@ -1,4 +1,6 @@
-# How to install
+# Helm charts for opensource projects
+
+### How to install Dockup
 
 Follow these steps, and you should be all good with a dockup installation
 where you can deploy serveral staging sites loadbalanced by traefik. You
