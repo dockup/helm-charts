@@ -1,0 +1,19 @@
+apiVersion: v1
+kind: Service
+metadata:
+  name: {{ template "db-pool.fullname" . }}
+  labels:
+    app: {{ template "db-pool.name" . }}
+    chart: {{ template "db-pool.chart" . }}
+    release: {{ .Release.Name }}
+    heritage: {{ .Release.Service }}
+spec:
+  type: {{ .Values.service.type }}
+  ports:
+    - port: {{ .Values.service.port }}
+      targetPort: http
+      protocol: TCP
+      name: http
+  selector:
+    app: {{ template "db-pool.name" . }}
+    release: {{ .Release.Name }}
