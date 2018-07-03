@@ -3,9 +3,12 @@ kind: ConfigMap
 metadata:
   name: {{ template "db-pool.fullname" . }}
 data:
+  MIX_ENV: prod
   DB_POOL_SQL_DUMP_URL: {{ .Values.mysql.sqlDumpUrl }}
   PGHOST: {{ .Release.Name }}-postgresql
   PGPASSWORD: {{ .Values.postgresql.postgresPassword }}
   PGUSER: {{ .Values.postgresql.postgresUser }}
   MYSQL_HOST: {{ .Release.Name }}-mysql
   MYSQL_PWD: {{ .Values.mysql.mysqlRootPassword }}
+  MDBHOST: {{ .Release.Name }}-mysql
+  MDBPASSWORD: {{ .Values.mysql.mysqlRootPassword }}
