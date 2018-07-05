@@ -65,6 +65,11 @@ hibernateAllAt: ""              # "20:00:00" for 8pm UTC
 # Wake up all hibernated deployments everyday
 wakeUpAllAt: ""                 # "08:00:00" for 8am UTC
 
+# Google login variables
+googleClientId: "mandatory-client-id"
+googleClientSecret: "mandatory-client-secret"
+googleClientDomains: "mandatory-domains-to-whitelist"
+
 helm:
   tillerNamespace: kube-system
 
