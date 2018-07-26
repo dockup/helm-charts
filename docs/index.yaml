@@ -1,0 +1,23 @@
+apiVersion: v1
+entries:
+  db-pool:
+  - apiVersion: v1
+    appVersion: "1.0"
+    created: 2018-07-26T14:16:49.762996973+05:30
+    description: A Helm chart for Kubernetes
+    digest: a613d8802d718d004160791ecbb68e73db6bd21fa470027d8cca624e4b71d318
+    name: db-pool
+    urls:
+    - https://helm-charts.codemancers.github.io/db-pool-0.1.0.tgz
+    version: 0.1.0
+  dockup:
+  - apiVersion: v1
+    appVersion: "1.0"
+    created: 2018-07-26T14:16:49.780059451+05:30
+    description: A Helm chart for dockup
+    digest: 7f7b9f8dfceefb580950ee42bff5eeabba3b1152c898d731019b4fa6e9efb6ff
+    name: dockup
+    urls:
+    - https://helm-charts.codemancers.github.io/dockup-0.1.0.tgz
+    version: 0.1.0
+generated: 2018-07-26T14:16:49.742799093+05:30
