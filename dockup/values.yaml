@@ -96,6 +96,8 @@ traefik:
       enabled: true
       domainsList:
         - main: "*.dockup.yourdomain.com"
+        - sans:
+          - "dockup.yourdomain.com"
   dashboard:
     enabled: true
     domain: "traefik.dockup.yourdomain.com"
