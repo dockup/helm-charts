@@ -3,7 +3,7 @@ dependencies:
   repository: https://kubernetes-charts.storage.googleapis.com
   version: 0.13.0
 - name: traefik
-  repository: file://../../../helm-charts/stable/traefik
-  version: 1.31.1
-digest: sha256:122701becaef4b85779f616817b1430254aac2b3e088e02902c4b779d578cee1
-generated: 2018-05-28T22:51:36.496567958+05:30
+  repository: https://kubernetes-charts.storage.googleapis.com
+  version: 1.35.1
+digest: sha256:e849018d06af050cf53e7701843fea79be9a4eff8c9b0a5d383fa22289600fd8
+generated: 2018-07-26T11:52:23.206714829+05:30

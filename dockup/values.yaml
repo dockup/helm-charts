@@ -92,9 +92,12 @@ traefik:
     staging: false
     logging: true
     challengeType: "dns-01"
-    domain:
+    domains:
       enabled: true
-      main: "*.dockup.yourdomain.com"
+      domainsList:
+        - main: "*.dockup.yourdomain.com"
+        - sans:
+          - "dockup.yourdomain.com"
   dashboard:
     enabled: true
     domain: "traefik.dockup.yourdomain.com"
