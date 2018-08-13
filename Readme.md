@@ -7,7 +7,6 @@ where you can deploy serveral staging sites loadbalanced by traefik. You
 need a working google kubernetes cluster. Ensure that you are able to
 connect to it using `kubectl`
 
-
 #### Step 1: Get helm working
 
 ~~~sh
@@ -32,19 +31,21 @@ requirements, we would be more than happy to help out.
 ~~~
 
 
-#### Step 3: Clone dockup, and install the helm package
+#### Step 3: Add these helm charts as repository
 
-Since dockup helm package is not published anywhere (this will most likely
-change), you need to clone this repo
+Now add codemancers chart repository to your helm config
+
+~~~
+helm repo add c9s https://helm-charts.c9s.tech
+~~~
+
+
+#### Step 4: Install dockup
+
+After adding a new helm repository, install dockup as helm package
 
 ~~~sh
-> git clone git@github.com:code-mancers/dockup.git
-> cd dockup/orchestration/helm
-
-# Edit contents of values.yaml, with domain name which you have control
-# over.
-
-> helm install .
+> helm install --name=dockup c9s/dockup
 ~~~
 
 The above commands installs postgresql required by dockup, and traefik by
@@ -68,8 +69,15 @@ Say, your domain is controlled by Gandi, you can use the following command:
                --set traefik.acme.dnsProvider.name=gandiv5 \
                --set traefik.acme.dnsProvider.gandiv5.GANDIV5_API_KEY=<your-token> \
                --set traefik.dashboard.domain=traefik.codemancers.org \
-               .
+               c9s/dockup
 ~~~
 
 Once all of this is done, ensure that you add external-ip to dns
 settings.
+
+Its recommended to set all these values in yaml file, say `dockup.yaml`
+and then install it
+
+~~~sh
+> helm install -f dockup.yaml --name=dockup c9s/dockup
+~~~
