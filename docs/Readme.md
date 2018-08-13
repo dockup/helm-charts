@@ -18,7 +18,7 @@ mv db-pool-*.tgz docs
 
 # Update index file in docs folder
 cd docs
-helm repo index --url=https://helm-charts.codemancers.github.io .
+helm repo index --url=https://helm-charts.c9s.tech .
 ~~~
 
 
