@@ -19,6 +19,8 @@ data:
   DOCKUP_MAX_CONCURRENT_BUILDS: "{{ .Values.maxConcurrentBuilds }}"
   DOCKUP_HIBERNATE_ALL_AT: "{{ .Values.hibernateAllAt }}"
   DOCKUP_WAKEUP_ALL_AT: "{{ .Values.wakeUpAllAt }}"
+  DOCKUP_CUSTOMER_NAME: "{{ .Values.dockupCustomerName }}"
+  DOCKUP_METRICS_ENDPOINT: "{{ .Values.dockupMetricsEndpoint }}"
   GOOGLE_CLIENT_ID: "{{ .Values.googleClientId }}"
   GOOGLE_CLIENT_SECRET: "{{ .Values.googleClientSecret }}"
   GOOGLE_CLIENT_DOMAINS: "{{ .Values.googleClientDomains }}"

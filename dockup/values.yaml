@@ -70,6 +70,9 @@ googleClientId: "mandatory-client-id"
 googleClientSecret: "mandatory-client-secret"
 googleClientDomains: "mandatory-domains-to-whitelist"
 
+dockupCustomerName: codemancers
+dockupMetricsEndpoint: https://subdomainfirebaseio.com
+
 helm:
   tillerNamespace: kube-system
 
