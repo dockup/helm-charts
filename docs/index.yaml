@@ -3,7 +3,7 @@ entries:
   db-pool:
   - apiVersion: v1
     appVersion: "1.0"
-    created: 2018-08-13T13:32:21.004518607+05:30
+    created: 2018-10-07T09:46:24.693205548+05:30
     description: A Helm chart for Kubernetes
     digest: a613d8802d718d004160791ecbb68e73db6bd21fa470027d8cca624e4b71d318
     name: db-pool
@@ -13,11 +13,20 @@ entries:
   dockup:
   - apiVersion: v1
     appVersion: "1.0"
-    created: 2018-08-13T13:32:21.018114658+05:30
+    created: 2018-10-07T09:46:24.708878875+05:30
+    description: A Helm chart for dockup
+    digest: 02fefc2a86a87e3c3e17d4942f3b7316003fcc6190111ff519d4dcd4e6a42c5b
+    name: dockup
+    urls:
+    - https://helm-charts.c9s.tech/dockup-0.2.0.tgz
+    version: 0.2.0
+  - apiVersion: v1
+    appVersion: "1.0"
+    created: 2018-10-07T09:46:24.705317506+05:30
     description: A Helm chart for dockup
     digest: 7f7b9f8dfceefb580950ee42bff5eeabba3b1152c898d731019b4fa6e9efb6ff
     name: dockup
     urls:
     - https://helm-charts.c9s.tech/dockup-0.1.0.tgz
     version: 0.1.0
-generated: 2018-08-13T13:32:20.986488367+05:30
+generated: 2018-10-07T09:46:24.683705543+05:30
