@@ -39,6 +39,12 @@ Now add codemancers chart repository to your helm config
 helm repo add c9s https://helm-charts.c9s.tech
 ~~~
 
+Time to time, its advised to update helm repository caches
+
+~~~
+helm repo update
+~~~
+
 
 #### Step 4: Install dockup
 
