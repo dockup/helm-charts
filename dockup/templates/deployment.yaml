@@ -28,14 +28,6 @@ spec:
             - name: http
               containerPort: 4000
               protocol: TCP
-          livenessProbe:
-            httpGet:
-              path: /
-              port: http
-          readinessProbe:
-            httpGet:
-              path: /
-              port: http
           env:
             {{- $configMapName := include "dockup.fullname" . -}}
             {{- range .Files.Lines "dot-env-file" }}
