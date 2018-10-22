@@ -16,5 +16,6 @@ data:
   DOCKUP_MAX_CONCURRENT_BUILDS: "{{ .Values.maxConcurrentBuilds }}"
   DOCKUP_HIBERNATE_ALL_AT: "{{ .Values.hibernateAllAt }}"
   DOCKUP_WAKEUP_ALL_AT: "{{ .Values.wakeUpAllAt }}"
+  DOCKUP_SUBDOMAIN_POOL: "{{ .Values.dockupSubdomainPool }}"
   DOCKUP_CUSTOMER_NAME: "{{ .Values.dockupCustomerName }}"
   DOCKUP_METRICS_ENDPOINT: "{{ .Values.dockupMetricsEndpoint }}"
