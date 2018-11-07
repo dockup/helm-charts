@@ -13,9 +13,9 @@ connect to it using `kubectl`
 
 > helm init
 > kubectl create serviceaccount --namespace kube-system tiller
-> kubectl create clusterrolebinding tiller-cluster-rule --clusterrole=cluster-admin
+> kubectl create clusterrolebinding tiller-cluster-rule --clusterrole=cluster-admin \
     --serviceaccount=kube-system:tiller
-> kubectl patch deploy --namespace kube-system tiller-deploy
+> kubectl patch deploy --namespace kube-system tiller-deploy \
     -p '{"spec":{"template":{"spec":{"serviceAccount":"tiller"}}}}'
 ~~~
 
@@ -26,7 +26,7 @@ requirements, we would be more than happy to help out.
 #### Step 2: Elevate your credentials for assigning roles
 
 ~~~sh
-> kubectl create clusterrolebinding yuva-cluster-admin-binding
+> kubectl create clusterrolebinding yuva-cluster-admin-binding \
     --clusterrole=cluster-admin --user=<your-email-used-for-gke>
 ~~~
 

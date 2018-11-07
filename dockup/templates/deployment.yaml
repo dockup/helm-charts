@@ -32,10 +32,14 @@ spec:
             httpGet:
               path: /
               port: http
+            initialDelaySeconds: 150 # 150 seconds for booting up
+            periodSeconds: 20        # 20 seconds to probe
           readinessProbe:
             httpGet:
               path: /
               port: http
+            initialDelaySeconds: 150 # 150 seconds for booting up
+            periodSeconds: 20        # 20 seconds to probe
           env:
             {{- $configMapName := include "dockup.fullname" . -}}
             {{- range .Files.Lines "dot-env-file" }}
@@ -45,6 +49,13 @@ spec:
                   name: {{ $configMapName }}
                   key: {{ . }}
             {{- end }}
+{{if .Values.dockupSubdomainPool}}
+            - name: DOCKUP_SUBDOMAIN_POOL
+              valueFrom:
+                configMapKeyRef:
+                  name: {{ $configMapName }}
+                  key: "DOCKUP_SUBDOMAIN_POOL"
+{{end}}
           resources:
 {{ toYaml .Values.resources | indent 12 }}
     {{- with .Values.nodeSelector }}
@@ -59,17 +70,3 @@ spec:
       tolerations:
 {{ toYaml . | indent 8 }}
     {{- end }}
-      initContainers:
-        - name: {{ .Chart.Name }}-migrations
-          image: "{{ .Values.image.repository }}:{{ .Values.image.tag }}"
-          imagePullPolicy: {{ .Values.image.pullPolicy }}
-          env:
-            {{- $configMapName := include "dockup.fullname" . -}}
-            {{- range .Files.Lines "dot-env-file" }}
-            - name: {{ . }}
-              valueFrom:
-                configMapKeyRef:
-                  name: {{ $configMapName }}
-                  key: {{ . }}
-            {{- end }}
-          command: ["/dockup/_build/prod/rel/dockup/bin/dockup", "migrate"]
