@@ -58,7 +58,8 @@ hibernateAllAt: ""              # "20:00:00" for 8pm UTC
 # Wake up all hibernated deployments everyday
 wakeUpAllAt: ""                 # "08:00:00" for 8am UTC
 
-dockupSubdomainPool: "subdomains"
+# Subdomain pool name that needs to be used for url generation
+# dockupSubdomainPool: "subdomains"
 
 dockupCustomerName: codemancers
 dockupMetricsEndpoint: https://subdomainfirebaseio.com
