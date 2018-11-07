@@ -46,7 +46,7 @@ helm repo update
 ~~~
 
 
-#### Step 4: Install dockup
+#### Installing dockup
 
 After adding a new helm repository, install dockup as helm package
 
@@ -86,4 +86,24 @@ and then install it
 
 ~~~sh
 > helm install -f dockup.yaml --name=dockup c9s/dockup
+~~~
+
+#### Installing db-pool
+
+Db-pool is used to create a farm of pre-poulated databases which can be
+connected to dockup deployments. This saves time when it comes to
+spinning up new testing sites.
+
+~~~sh
+> helm install --name=db-pool c9s/db-pool
+~~~
+
+The above commands installs postgresql required by db-pool, and mysql.
+Currently db-pool only supports managing of mysql databases.
+
+Its recommended to set all these values in yaml file, say `db-pool.yaml`
+and then install it
+
+~~~sh
+> helm install -f db-pool.yaml --name=db-pool c9s/db-pool
 ~~~
