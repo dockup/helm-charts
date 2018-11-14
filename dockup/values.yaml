@@ -64,9 +64,6 @@ wakeUpAllAt: ""                 # "08:00:00" for 8am UTC
 dockupCustomerName: codemancers
 dockupMetricsEndpoint: https://subdomainfirebaseio.com
 
-helm:
-  tillerNamespace: kube-system
-
 postgresql:
   postgresUser: user
   postgresPassword: secret
