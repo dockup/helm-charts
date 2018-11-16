@@ -3,7 +3,7 @@ entries:
   db-pool:
   - apiVersion: v1
     appVersion: "1.0"
-    created: 2018-11-07T16:05:29.524256181+05:30
+    created: 2018-11-16T13:21:18.440357969+05:30
     description: A Helm chart for Kubernetes
     digest: a613d8802d718d004160791ecbb68e73db6bd21fa470027d8cca624e4b71d318
     name: db-pool
@@ -13,7 +13,16 @@ entries:
   dockup:
   - apiVersion: v1
     appVersion: "1.0"
-    created: 2018-11-07T16:05:29.588048261+05:30
+    created: 2018-11-16T13:21:18.516852746+05:30
+    description: A Helm chart for dockup
+    digest: 2cfe08cb68434ff8ab2de070d9f2d328fd3ee07fea4d54b7ec495bc8dac1b268
+    name: dockup
+    urls:
+    - https://helm-charts.c9s.tech/dockup-0.6.0.tgz
+    version: 0.6.0
+  - apiVersion: v1
+    appVersion: "1.0"
+    created: 2018-11-16T13:21:18.499361937+05:30
     description: A Helm chart for dockup
     digest: d8e11dd513cb9f8636e75741044fbfae012a3fe499e625cbe14bc9d2081e1b61
     name: dockup
@@ -22,7 +31,7 @@ entries:
     version: 0.5.0
   - apiVersion: v1
     appVersion: "1.0"
-    created: 2018-11-07T16:05:29.576168913+05:30
+    created: 2018-11-16T13:21:18.486117281+05:30
     description: A Helm chart for dockup
     digest: 240db97bc3bbe0c0adf2eea704a915ffd8ee1b954d91d79434b80743ec0df19b
     name: dockup
@@ -31,7 +40,7 @@ entries:
     version: 0.4.0
   - apiVersion: v1
     appVersion: "1.0"
-    created: 2018-11-07T16:05:29.563898468+05:30
+    created: 2018-11-16T13:21:18.473353559+05:30
     description: A Helm chart for dockup
     digest: 2d71882b753f0f6c6875c9ac02af44f103f6f27e17f651f2025c7ef2baa0b682
     name: dockup
@@ -40,7 +49,7 @@ entries:
     version: 0.3.0
   - apiVersion: v1
     appVersion: "1.0"
-    created: 2018-11-07T16:05:29.554403411+05:30
+    created: 2018-11-16T13:21:18.466831482+05:30
     description: A Helm chart for dockup
     digest: 02fefc2a86a87e3c3e17d4942f3b7316003fcc6190111ff519d4dcd4e6a42c5b
     name: dockup
@@ -49,11 +58,11 @@ entries:
     version: 0.2.0
   - apiVersion: v1
     appVersion: "1.0"
-    created: 2018-11-07T16:05:29.540061883+05:30
+    created: 2018-11-16T13:21:18.451675785+05:30
     description: A Helm chart for dockup
     digest: 7f7b9f8dfceefb580950ee42bff5eeabba3b1152c898d731019b4fa6e9efb6ff
     name: dockup
     urls:
     - https://helm-charts.c9s.tech/dockup-0.1.0.tgz
     version: 0.1.0
-generated: 2018-11-07T16:05:29.497480893+05:30
+generated: 2018-11-16T13:21:18.431067863+05:30
