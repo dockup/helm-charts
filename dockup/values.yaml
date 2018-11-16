@@ -64,8 +64,8 @@ wakeUpAllAt: ""                 # "08:00:00" for 8am UTC
 dockupCustomerName: codemancers
 dockupMetricsEndpoint: https://subdomainfirebaseio.com
 
-helm:
-  tillerNamespace: kube-system
+# Namespace that dockup has to manage
+dockupDeploymentsNamespace: "dockup-deployments"
 
 postgresql:
   postgresUser: user
