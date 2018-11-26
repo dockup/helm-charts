@@ -32,14 +32,16 @@ spec:
             httpGet:
               path: /
               port: http
-            initialDelaySeconds: 150 # 150 seconds for booting up
+            initialDelaySeconds: 250 # 250 seconds for booting up
             periodSeconds: 20        # 20 seconds to probe
+            timeoutSeconds: 3        # 3 seconds for request to timeout
           readinessProbe:
             httpGet:
               path: /
               port: http
-            initialDelaySeconds: 150 # 150 seconds for booting up
+            initialDelaySeconds: 250 # 250 seconds for booting up
             periodSeconds: 20        # 20 seconds to probe
+            timeoutSeconds: 3        # 3 seconds for request to timeout
           env:
             {{- $configMapName := include "dockup.fullname" . -}}
             {{- range .Files.Lines "dot-env-file" }}
