@@ -7,9 +7,9 @@ data:
   DOCKUP_WORKDIR: "/workdir"
   DOCKUP_URL_HOST: "{{ .Values.ingress.hosts | first }}"
   DOCKUP_BASE_DOMAIN: "{{ .Values.baseDomain }}"
-  PGHOST: {{ .Release.Name }}-postgresql
-  PGPASSWORD: {{ .Values.postgresql.postgresPassword }}
-  PGUSER: {{ .Values.postgresql.postgresUser }}
+  PGHOST: {{ .Values.cloudsql.host }}
+  PGPASSWORD: {{ .Values.cloudsql.password }}
+  PGUSER: {{ .Values.cloudsql.user }}
   SLACK_WEBHOOK_URL: {{ .Values.slackWebhookUrl }}
   DOCKUP_BACKEND: kubernetes
   DOCKUP_MAX_CONCURRENT_DEPLOYMENTS: "{{ .Values.maxConcurrentDeployments }}"

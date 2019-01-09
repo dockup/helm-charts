@@ -67,9 +67,16 @@ dockupMetricsEndpoint: https://subdomainfirebaseio.com
 # Namespace that dockup has to manage
 dockupDeploymentsNamespace: "dockup-deployments"
 
+# remove these once migration to cloudsql is complete
 postgresql:
   postgresUser: user
   postgresPassword: secret
+
+cloudsql:
+  user: dockup-pg-user
+  password: dockup-pg-secret
+  host: dockup-pg-host
+
 
 traefik:
   enabled: true
