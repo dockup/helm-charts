@@ -46,6 +46,8 @@ affinity: {}
 
 baseDomain: "dockup.yourdomain.com"
 
+dockupBackend: "kubernetes"
+
 maxConcurrentDeployments: 10
 maxConcurrentBuilds: 10
 
