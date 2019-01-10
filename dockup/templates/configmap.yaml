@@ -16,6 +16,8 @@ data:
   DOCKUP_MAX_CONCURRENT_BUILDS: "{{ .Values.maxConcurrentBuilds }}"
   DOCKUP_HIBERNATE_ALL_AT: "{{ .Values.hibernateAllAt }}"
   DOCKUP_WAKEUP_ALL_AT: "{{ .Values.wakeUpAllAt }}"
+  DOCKUP_BITBUCKET_CLIENT_ID: "{{ .Values.bitbucket.clientId }}"
+  DOCKUP_BITBUCKET_CLIENT_SECRET: "{{ .Values.bitbucket.clientSecret }}"
 {{- if .Values.dockupSubdomainPool }}
   DOCKUP_SUBDOMAIN_POOL: "{{ .Values.dockupSubdomainPool }}"
 {{- end }}

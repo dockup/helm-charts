@@ -63,6 +63,10 @@ wakeUpAllAt: ""                 # "08:00:00" for 8am UTC
 # Subdomain pool name that needs to be used for url generation
 # dockupSubdomainPool: "subdomains"
 
+bitbucket:
+  clientId: "sample-client-id"
+  clientSecret: "sample-client-secret"
+
 dockupCustomerName: codemancers
 dockupMetricsEndpoint: https://subdomainfirebaseio.com
 
