@@ -67,6 +67,10 @@ bitbucket:
   clientId: "sample-client-id"
   clientSecret: "sample-client-secret"
 
+google:
+  clientId: "sample-client-id"
+  clientSecret: "sample-client-secret"
+
 dockupCustomerName: codemancers
 dockupMetricsEndpoint: https://subdomainfirebaseio.com
 
