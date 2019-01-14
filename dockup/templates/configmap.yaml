@@ -25,3 +25,4 @@ data:
 {{- end }}
   DOCKUP_CUSTOMER_NAME: "{{ .Values.dockupCustomerName }}"
   DOCKUP_METRICS_ENDPOINT: "{{ .Values.dockupMetricsEndpoint }}"
+  ROLLBAR_ACCESS_TOKEN: "{{ .Values.rollbarAccessToken }}"
