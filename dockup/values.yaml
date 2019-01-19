@@ -90,38 +90,3 @@ intercomSecretKey: "intercom-secret-key"
 postgresql:
   postgresUser: user
   postgresPassword: secret
-
-traefik:
-  enabled: true
-  cpuRequest: 200m
-  memoryRequest: 80Mi
-  cpuLimit: 200m
-  memoryLimit: 200Mi
-  ssl:
-    enabled: true
-    enforced: true
-    email: "youremail@yourdomain.com"
-  acme:
-    enabled: true
-    staging: false
-    logging: true
-    challengeType: "dns-01"
-    domains:
-      enabled: true
-      domainsList:
-        - main: "*.dockup.yourdomain.com"
-        - sans:
-          - "dockup.yourdomain.com"
-  dashboard:
-    enabled: true
-    domain: "traefik.dockup.yourdomain.com"
-  service:
-    nodePorts:
-      http: "80"
-      https: "443"
-  rbac:
-    enabled: true
-  deployment:
-    hostPort:
-      httpsEnabled: true
-      dashboardEnabled: true
