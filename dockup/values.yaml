@@ -83,6 +83,10 @@ sendgridApiKey: "sendgrid-api-key"
 # For reporting errors
 rollbarAccessToken: "rollbar-access-token"
 
+# For customer support
+intercomSecretKey: "intercom-secret-key"
+
+
 postgresql:
   postgresUser: user
   postgresPassword: secret

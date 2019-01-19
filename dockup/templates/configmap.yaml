@@ -27,3 +27,4 @@ data:
   DOCKUP_METRICS_ENDPOINT: "{{ .Values.dockupMetricsEndpoint }}"
   SENDGRID_API_KEY: "{{ .Values.sendgridApiKey }}"
   ROLLBAR_ACCESS_TOKEN: "{{ .Values.rollbarAccessToken }}"
+  INTERCOM_SECRET_KEY: "{{ .Values.intercomSecretKey }}"
