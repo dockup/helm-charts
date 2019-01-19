@@ -54,35 +54,11 @@ After adding a new helm repository, install dockup as helm package
 > helm install --name=dockup c9s/dockup
 ~~~
 
-The above commands installs postgresql required by dockup, and traefik by
-default for your staging servers. You can optionally disable traefik by
-editing `values.yaml` file
+The above commands installs postgresql required by dockup
 
-NOTE: You also have to give dns api token so that traefik can do the
-following:
-
-- Use api token to access dns settings
-- Add a `TXT` record for `dns-01` challenge
-- Verify your domain, and obtain wildcard certificate via letsencrypt
-- Remove the added `TXT` record
-
-Say, your domain is controlled by Gandi, you can use the following command:
-
-~~~sh
-> helm install --set ingress.host=dockup.codemancers.org \
-               --set traefik.ssl.email=yuva@codemancers.com \
-               --set traefik.acme.domain.main=*.codemancers.org \
-               --set traefik.acme.dnsProvider.name=gandiv5 \
-               --set traefik.acme.dnsProvider.gandiv5.GANDIV5_API_KEY=<your-token> \
-               --set traefik.dashboard.domain=traefik.codemancers.org \
-               c9s/dockup
-~~~
-
-Once all of this is done, ensure that you add external-ip to dns
-settings.
-
-Its recommended to set all these values in yaml file, say `dockup.yaml`
-and then install it
+You need to have traefik or nginx ingress in order to expose dockup to
+external world. Also, its recommended to set custom values in yaml
+file, say `dockup.yaml` and then install dockup.
 
 ~~~sh
 > helm install -f dockup.yaml --name=dockup c9s/dockup
