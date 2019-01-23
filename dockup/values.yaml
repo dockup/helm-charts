@@ -48,9 +48,6 @@ baseDomain: "dockup.yourdomain.com"
 
 dockupBackend: "kubernetes"
 
-maxConcurrentDeployments: 10
-maxConcurrentBuilds: 10
-
 # This url will be used to send notifications to Slack
 slackWebhookUrl: "https://hooks.slack.com/services/token"
 

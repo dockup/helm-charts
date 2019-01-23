@@ -12,8 +12,6 @@ data:
   PGUSER: {{ .Values.postgresql.postgresUser }}
   SLACK_WEBHOOK_URL: {{ .Values.slackWebhookUrl }}
   DOCKUP_BACKEND: {{ .Values.dockupBackend }}
-  DOCKUP_MAX_CONCURRENT_DEPLOYMENTS: "{{ .Values.maxConcurrentDeployments }}"
-  DOCKUP_MAX_CONCURRENT_BUILDS: "{{ .Values.maxConcurrentBuilds }}"
   DOCKUP_BITBUCKET_CLIENT_ID: "{{ .Values.bitbucket.clientId }}"
   DOCKUP_BITBUCKET_CLIENT_SECRET: "{{ .Values.bitbucket.clientSecret }}"
   DOCKUP_GOOGLE_CLIENT_ID: "{{ .Values.google.clientId }}"
