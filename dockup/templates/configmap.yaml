@@ -10,7 +10,6 @@ data:
   PGHOST: {{ .Release.Name }}-postgresql
   PGPASSWORD: {{ .Values.postgresql.postgresPassword }}
   PGUSER: {{ .Values.postgresql.postgresUser }}
-  SLACK_WEBHOOK_URL: {{ .Values.slackWebhookUrl }}
   DOCKUP_BACKEND: {{ .Values.dockupBackend }}
   DOCKUP_BITBUCKET_CLIENT_ID: "{{ .Values.bitbucket.clientId }}"
   DOCKUP_BITBUCKET_CLIENT_SECRET: "{{ .Values.bitbucket.clientSecret }}"
