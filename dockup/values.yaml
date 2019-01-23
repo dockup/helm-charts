@@ -62,9 +62,6 @@ google:
 dockupCustomerName: codemancers
 dockupMetricsEndpoint: https://subdomainfirebaseio.com
 
-# Namespace that dockup has to manage
-dockupDeploymentsNamespace: "dockup-deployments"
-
 # For sending emails
 sendgridApiKey: "sendgrid-api-key"
 
