@@ -10,6 +10,7 @@ data:
   PGPASSWORD: {{ .Values.postgresql.postgresPassword }}
   PGUSER: {{ .Values.postgresql.postgresUser }}
   DOCKUP_BACKEND: {{ .Values.dockupBackend }}
+  DOCKUP_SUPER_ADMINS: "{{ .Values.dockupSuperAdmins }}"
   DOCKUP_BITBUCKET_CLIENT_ID: "{{ .Values.bitbucket.clientId }}"
   DOCKUP_BITBUCKET_CLIENT_SECRET: "{{ .Values.bitbucket.clientSecret }}"
   DOCKUP_GOOGLE_CLIENT_ID: "{{ .Values.google.clientId }}"
