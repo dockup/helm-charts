@@ -71,6 +71,8 @@ rollbarAccessToken: "rollbar-access-token"
 # For customer support
 intercomSecretKey: "intercom-secret-key"
 
+# For certs
+gandiv5ApiKey: "gandiv5-api-key"
 
 postgresql:
   postgresUser: user

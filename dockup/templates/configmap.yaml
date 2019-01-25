@@ -22,3 +22,4 @@ data:
   SENDGRID_API_KEY: "{{ .Values.sendgridApiKey }}"
   ROLLBAR_ACCESS_TOKEN: "{{ .Values.rollbarAccessToken }}"
   INTERCOM_SECRET_KEY: "{{ .Values.intercomSecretKey }}"
+  DOCKUP_GANDIV5_API_KEY: "{{ .Values.gandiv5ApiKey }}"
