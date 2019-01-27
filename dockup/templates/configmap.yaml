@@ -25,3 +25,4 @@ data:
   INTERCOM_SECRET_KEY: "{{ .Values.intercomSecretKey }}"
   DOCKUP_GANDIV5_API_KEY: "{{ .Values.gandiv5ApiKey }}"
   ELIXIR_CLUSTER_COOKIE: "{{ .Values.elixirClusterCookie }}"
+  DOCKUP_K8S_APP_NAME: "{{ template "dockup.name" . }}"
