@@ -76,6 +76,9 @@ intercomSecretKey: "intercom-secret-key"
 # For certs
 gandiv5ApiKey: "gandiv5-api-key"
 
+# For connecting elixir nodes
+elixirClusterCookie: "secret-cluster-cookie"
+
 postgresql:
   postgresUser: user
   postgresPassword: secret
