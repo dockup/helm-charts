@@ -23,6 +23,7 @@ spec:
         - name: {{ .Chart.Name }}
           image: "{{ .Values.image.repository }}:{{ .Values.image.tag }}"
           imagePullPolicy: {{ .Values.image.pullPolicy }}
+          command: ['sh', '-c', 'export POD_A_RECORD=$(echo $POD_IP | sed "s/\./-/g") && /dockup/scripts/run_release']
           ports:
             - name: http
               containerPort: 4000
@@ -65,9 +66,6 @@ spec:
                   fieldPath: status.podIP
           resources:
 {{ toYaml .Values.resources | indent 12 }}
-          command: ["sh", "-c"]
-          args: ["POD_A_RECORD"]
-          args: ["export POD_A_RECORD=$(echo $POD_IP | sed 's/\./-/g') && /dockup/scripts/run_release"]
     {{- with .Values.nodeSelector }}
       nodeSelector:
 {{ toYaml . | indent 8 }}
