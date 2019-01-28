@@ -6,6 +6,8 @@ PR merged. Make sure that you bump up chart versions also.
 
 Following: https://docs.helm.sh/developing_charts/#hosting-chart-repositories
 
+NOTE: Bump up chart versions in `Chart.yaml` before proceeding.
+
 ~~~sh
 # First create zip files for charts
 cd /path/to/cloned/repo/of/helm-charts
