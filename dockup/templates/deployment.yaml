@@ -23,8 +23,6 @@ spec:
         - name: {{ .Chart.Name }}
           image: "{{ .Values.image.repository }}:{{ .Values.image.tag }}"
           imagePullPolicy: {{ .Values.image.pullPolicy }}
-          command: ['sh']
-          args: ['-c', 'export POD_A_RECORD=$(echo $POD_IP | sed "s/\./-/g") && /dockup/scripts/run_release']
           ports:
             - name: http
               containerPort: 4000
