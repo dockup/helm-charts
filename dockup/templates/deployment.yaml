@@ -19,7 +19,6 @@ spec:
         app: {{ template "dockup.name" . }}
         release: {{ .Release.Name }}
     spec:
-      serviceAccount: dockup
       containers:
         - name: {{ .Chart.Name }}
           image: "{{ .Values.image.repository }}:{{ .Values.image.tag }}"
@@ -32,13 +31,13 @@ spec:
             httpGet:
               path: /
               port: http
-            initialDelaySeconds: 150 # 150 seconds for booting up
+            initialDelaySeconds: 90  # 90 seconds for booting up
             periodSeconds: 20        # 20 seconds to probe
           readinessProbe:
             httpGet:
               path: /
               port: http
-            initialDelaySeconds: 150 # 150 seconds for booting up
+            initialDelaySeconds: 90  # 90 seconds for booting up
             periodSeconds: 20        # 20 seconds to probe
           env:
             {{- $configMapName := include "dockup.fullname" . -}}

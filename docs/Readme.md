@@ -2,7 +2,7 @@
 
 Helm charts repository is nothing but bunch of zip files served by a server.
 Its mostly static data. Follow below steps at root directory, and get your
-PR merged.
+PR merged. Make sure that you bump up chart versions also.
 
 Following: https://docs.helm.sh/developing_charts/#hosting-chart-repositories
 

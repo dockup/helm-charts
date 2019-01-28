@@ -2,7 +2,3 @@ dependencies:
   - name: postgresql
     version: "0.13.0"
     repository: "https://kubernetes-charts.storage.googleapis.com"
-  - name: traefik
-    version: "1.35.1"
-    repository: "https://kubernetes-charts.storage.googleapis.com"
-    condition: traefik.enabled

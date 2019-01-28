@@ -4,20 +4,23 @@ metadata:
   name: {{ template "dockup.fullname" . }}
 data:
   MIX_ENV: prod
-  DOCKUP_WORKDIR: "/workdir"
   DOCKUP_URL_HOST: "{{ .Values.ingress.hosts | first }}"
   DOCKUP_BASE_DOMAIN: "{{ .Values.baseDomain }}"
   PGHOST: {{ .Values.cloudsql.host }}
   PGPASSWORD: {{ .Values.cloudsql.password }}
   PGUSER: {{ .Values.cloudsql.user }}
-  SLACK_WEBHOOK_URL: {{ .Values.slackWebhookUrl }}
-  DOCKUP_BACKEND: kubernetes
-  DOCKUP_MAX_CONCURRENT_DEPLOYMENTS: "{{ .Values.maxConcurrentDeployments }}"
-  DOCKUP_MAX_CONCURRENT_BUILDS: "{{ .Values.maxConcurrentBuilds }}"
-  DOCKUP_HIBERNATE_ALL_AT: "{{ .Values.hibernateAllAt }}"
-  DOCKUP_WAKEUP_ALL_AT: "{{ .Values.wakeUpAllAt }}"
+  DOCKUP_BACKEND: {{ .Values.dockupBackend }}
+  DOCKUP_SUPER_ADMINS: "{{ .Values.dockupSuperAdmins }}"
+  DOCKUP_BITBUCKET_CLIENT_ID: "{{ .Values.bitbucket.clientId }}"
+  DOCKUP_BITBUCKET_CLIENT_SECRET: "{{ .Values.bitbucket.clientSecret }}"
+  DOCKUP_GOOGLE_CLIENT_ID: "{{ .Values.google.clientId }}"
+  DOCKUP_GOOGLE_CLIENT_SECRET: "{{ .Values.google.clientSecret }}"
 {{- if .Values.dockupSubdomainPool }}
   DOCKUP_SUBDOMAIN_POOL: "{{ .Values.dockupSubdomainPool }}"
 {{- end }}
   DOCKUP_CUSTOMER_NAME: "{{ .Values.dockupCustomerName }}"
   DOCKUP_METRICS_ENDPOINT: "{{ .Values.dockupMetricsEndpoint }}"
+  SENDGRID_API_KEY: "{{ .Values.sendgridApiKey }}"
+  ROLLBAR_ACCESS_TOKEN: "{{ .Values.rollbarAccessToken }}"
+  INTERCOM_SECRET_KEY: "{{ .Values.intercomSecretKey }}"
+  DOCKUP_GANDIV5_API_KEY: "{{ .Values.gandiv5ApiKey }}"

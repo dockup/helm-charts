@@ -46,26 +46,35 @@ affinity: {}
 
 baseDomain: "dockup.yourdomain.com"
 
-maxConcurrentDeployments: 10
-maxConcurrentBuilds: 10
+dockupBackend: "kubernetes"
 
-# This url will be used to send notifications to Slack
-slackWebhookUrl: "https://hooks.slack.com/services/token"
-
-# Hibernate all successfully deployed deployments everyday
-hibernateAllAt: ""              # "20:00:00" for 8pm UTC
-
-# Wake up all hibernated deployments everyday
-wakeUpAllAt: ""                 # "08:00:00" for 8am UTC
+dockupSuperAdmins: "csv-of-admin-emails"
 
 # Subdomain pool name that needs to be used for url generation
 # dockupSubdomainPool: "subdomains"
 
+bitbucket:
+  clientId: "sample-client-id"
+  clientSecret: "sample-client-secret"
+
+google:
+  clientId: "sample-client-id"
+  clientSecret: "sample-client-secret"
+
 dockupCustomerName: codemancers
 dockupMetricsEndpoint: https://subdomainfirebaseio.com
 
-# Namespace that dockup has to manage
-dockupDeploymentsNamespace: "dockup-deployments"
+# For sending emails
+sendgridApiKey: "sendgrid-api-key"
+
+# For reporting errors
+rollbarAccessToken: "rollbar-access-token"
+
+# For customer support
+intercomSecretKey: "intercom-secret-key"
+
+# For certs
+gandiv5ApiKey: "gandiv5-api-key"
 
 # remove these once migration to cloudsql is complete
 postgresql:
@@ -76,39 +85,3 @@ cloudsql:
   user: dockup-pg-user
   password: dockup-pg-secret
   host: dockup-pg-host
-
-
-traefik:
-  enabled: true
-  cpuRequest: 200m
-  memoryRequest: 80Mi
-  cpuLimit: 200m
-  memoryLimit: 200Mi
-  ssl:
-    enabled: true
-    enforced: true
-    email: "youremail@yourdomain.com"
-  acme:
-    enabled: true
-    staging: false
-    logging: true
-    challengeType: "dns-01"
-    domains:
-      enabled: true
-      domainsList:
-        - main: "*.dockup.yourdomain.com"
-        - sans:
-          - "dockup.yourdomain.com"
-  dashboard:
-    enabled: true
-    domain: "traefik.dockup.yourdomain.com"
-  service:
-    nodePorts:
-      http: "80"
-      https: "443"
-  rbac:
-    enabled: true
-  deployment:
-    hostPort:
-      httpsEnabled: true
-      dashboardEnabled: true
