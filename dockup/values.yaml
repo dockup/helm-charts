@@ -20,7 +20,7 @@ ingress:
     # kubernetes.io/tls-acme: "true"
   path: /
   hosts:
-    - ui.dockup.yourdomain.com
+    - yourcompany.com
   tls: []
   #  - secretName: chart-example-tls
   #    hosts:
@@ -44,7 +44,7 @@ tolerations: []
 
 affinity: {}
 
-baseDomain: "dockup.yourdomain.com"
+baseDomain: "company_subdomain.yourdomain.com"
 
 dockupBackend: "kubernetes"
 
@@ -79,6 +79,8 @@ gandiv5ApiKey: "gandiv5-api-key"
 # For connecting elixir nodes
 elixirClusterCookie: "secret-cluster-cookie"
 
-postgresql:
-  postgresUser: user
-  postgresPassword: secret
+# Cloudsql instances settings
+cloudsql:
+  user: dockup-pg-user
+  password: dockup-pg-secret
+  host: dockup-pg-host
