@@ -76,11 +76,7 @@ intercomSecretKey: "intercom-secret-key"
 # For certs
 gandiv5ApiKey: "gandiv5-api-key"
 
-# remove these once migration to cloudsql is complete
-postgresql:
-  postgresUser: user
-  postgresPassword: secret
-
+# Cloudsql instances settings
 cloudsql:
   user: dockup-pg-user
   password: dockup-pg-secret
