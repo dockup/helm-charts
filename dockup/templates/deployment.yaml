@@ -55,6 +55,10 @@ spec:
                   name: {{ $configMapName }}
                   key: "DOCKUP_SUBDOMAIN_POOL"
 {{end}}
+            - name: POD_IP
+              valueFrom:
+                fieldRef:
+                  fieldPath: status.podIP
           resources:
 {{ toYaml .Values.resources | indent 12 }}
     {{- with .Values.nodeSelector }}

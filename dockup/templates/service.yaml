@@ -17,3 +17,14 @@ spec:
   selector:
     app: {{ template "dockup.name" . }}
     release: {{ .Release.Name }}
+---
+apiVersion: v1
+kind: Service
+metadata:
+  name: {{ template "dockup.name" . }}-headless
+spec:
+  ports:
+    - port: 8000
+  selector:
+    app: {{ template "dockup.name" . }}
+  clusterIP: None

@@ -20,7 +20,7 @@ ingress:
     # kubernetes.io/tls-acme: "true"
   path: /
   hosts:
-    - ui.dockup.yourdomain.com
+    - yourcompany.com
   tls: []
   #  - secretName: chart-example-tls
   #    hosts:
@@ -44,7 +44,7 @@ tolerations: []
 
 affinity: {}
 
-baseDomain: "dockup.yourdomain.com"
+baseDomain: "company_subdomain.yourdomain.com"
 
 dockupBackend: "kubernetes"
 
@@ -75,6 +75,9 @@ intercomSecretKey: "intercom-secret-key"
 
 # For certs
 gandiv5ApiKey: "gandiv5-api-key"
+
+# For connecting elixir nodes
+elixirClusterCookie: "secret-cluster-cookie"
 
 # Cloudsql instances settings
 cloudsql:
