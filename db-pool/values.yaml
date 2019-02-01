@@ -52,5 +52,7 @@ postgresql:
 # Mysql settings
 mysql:
   enabled: true
-  sqlDumpUrl: "mandatory-one-to-be-specified"
   mysqlRootPassword: root
+
+db:
+  dbDumpUrl: "mandatory-one-to-be-specified"
