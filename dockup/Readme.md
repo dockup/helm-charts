@@ -35,7 +35,6 @@ their default values.
 | -------------------------------------- | ------------------------------------------------------------------------- | ------------------------------------------------- |
 | `ingress.hosts[0]`                     | Url where dockup UI has to be accessible                                  | `ui.dockup.yourdomain.com`                        |
 | `baseDomain`                           | Base domain used for all dockup deployments                               | `dockup.yourdomain.com`                           |
-| `dockupSubdomainPool`                  | Name for url subdomains                                                   | unset                                             |
 | `dockupCustomerName`                   | Customer name for metrics                                                 | codemancers                                       |
 | `dockupMetricsEndpoint`                | Endpoint to report metrics                                                | https://subdomainfirebaseio.com (dummy)           |
 

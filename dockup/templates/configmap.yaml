@@ -15,9 +15,6 @@ data:
   DOCKUP_BITBUCKET_CLIENT_SECRET: "{{ .Values.bitbucket.clientSecret }}"
   DOCKUP_GOOGLE_CLIENT_ID: "{{ .Values.google.clientId }}"
   DOCKUP_GOOGLE_CLIENT_SECRET: "{{ .Values.google.clientSecret }}"
-{{- if .Values.dockupSubdomainPool }}
-  DOCKUP_SUBDOMAIN_POOL: "{{ .Values.dockupSubdomainPool }}"
-{{- end }}
   DOCKUP_CUSTOMER_NAME: "{{ .Values.dockupCustomerName }}"
   DOCKUP_METRICS_ENDPOINT: "{{ .Values.dockupMetricsEndpoint }}"
   SENDGRID_API_KEY: "{{ .Values.sendgridApiKey }}"

@@ -50,9 +50,6 @@ dockupBackend: "kubernetes"
 
 dockupSuperAdmins: "csv-of-admin-emails"
 
-# Subdomain pool name that needs to be used for url generation
-# dockupSubdomainPool: "subdomains"
-
 bitbucket:
   clientId: "sample-client-id"
   clientSecret: "sample-client-secret"

@@ -58,13 +58,6 @@ spec:
                   name: {{ $configMapName }}
                   key: {{ . }}
             {{- end }}
-{{if .Values.dockupSubdomainPool}}
-            - name: DOCKUP_SUBDOMAIN_POOL
-              valueFrom:
-                configMapKeyRef:
-                  name: {{ $configMapName }}
-                  key: "DOCKUP_SUBDOMAIN_POOL"
-{{end}}
             - name: POD_IP
               valueFrom:
                 fieldRef:
