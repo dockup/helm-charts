@@ -55,4 +55,6 @@ mysql:
   mysqlRootPassword: root
 
 db:
-  dbDumpUrl: "mandatory-one-to-be-specified"
+  dumpUrl: "mandatory-one-to-be-specified"
+  adapter: "mysql"
+  namePrefix: "dockup"
