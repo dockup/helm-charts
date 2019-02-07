@@ -35,12 +35,6 @@ their default values.
 | -------------------------------------- | ------------------------------------------------------------------------- | ------------------------------------------------- |
 | `ingress.hosts[0]`                     | Url where dockup UI has to be accessible                                  | `ui.dockup.yourdomain.com`                        |
 | `baseDomain`                           | Base domain used for all dockup deployments                               | `dockup.yourdomain.com`                           |
-| `maxConcurrentDeployments`             | Maximum deploys allowed                                                   | 10                                                |
-| `maxConcurrentBuilds`                  | Maximum builds allowed at a given time                                    | 10                                                |
-| `slackWebhookUrl`                      | Url where dockup will inform slack notifications                          | `test`                                            |
-| `hibernateAllAt`                       | Time in hh:mm:ss format to hibrenate all deploys. Eg: "14:30:00"          | unset                                             |
-| `wakeUpAllAt`                          | Time in hh:mm:ss format to wake-up all deploys. Eg: "14:30:00"            | unset                                             |
-| `dockupSubdomainPool`                  | Name for url subdomains                                                   | unset                                             |
 | `dockupCustomerName`                   | Customer name for metrics                                                 | codemancers                                       |
 | `dockupMetricsEndpoint`                | Endpoint to report metrics                                                | https://subdomainfirebaseio.com (dummy)           |
 
