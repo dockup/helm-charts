@@ -52,5 +52,9 @@ postgresql:
 # Mysql settings
 mysql:
   enabled: true
-  sqlDumpUrl: "mandatory-one-to-be-specified"
   mysqlRootPassword: root
+
+db:
+  dumpUrl: "mandatory-one-to-be-specified"
+  adapter: "mysql"
+  namePrefix: "dockup"

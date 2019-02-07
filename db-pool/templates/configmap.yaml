@@ -4,7 +4,9 @@ metadata:
   name: {{ template "db-pool.fullname" . }}
 data:
   MIX_ENV: prod
-  DB_POOL_SQL_DUMP_URL: {{ .Values.mysql.sqlDumpUrl }}
+  DB_POOL_DB_DUMP_URL: {{ .Values.db.dumpUrl }}
+  DB_POOL_DB_ADAPTER: {{ .Values.db.adapter }}
+  DB_POOL_DB_NAME: {{ .Values.db.namePrefix }}
   PGHOST: {{ .Release.Name }}-postgresql
   PGPASSWORD: {{ .Values.postgresql.postgresPassword }}
   PGUSER: {{ .Values.postgresql.postgresUser }}
