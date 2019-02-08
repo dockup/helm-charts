@@ -66,6 +66,7 @@ sendgridApiKey: "sendgrid-api-key"
 
 # For reporting errors
 rollbarAccessToken: "rollbar-access-token"
+rollbarClientKey: "rollbar-client-key"
 
 # For customer support
 intercomSecretKey: "intercom-secret-key"
