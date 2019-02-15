@@ -11,6 +11,9 @@ data:
   PGUSER: {{ .Values.cloudsql.user }}
   DOCKUP_BACKEND: {{ .Values.dockupBackend }}
   DOCKUP_SUPER_ADMINS: "{{ .Values.dockupSuperAdmins }}"
+  DOCKUP_GITHUB_PRIVATE_KEY_BASE64_ENCODED: "{{ .Values.github.privateKeyBase64Encoded }}"
+  DOCKUP_GITHUB_APP_NAME: "{{ .Values.github.appName }}"
+  DOCKUP_GITHUB_APP_ID: "{{ .Values.github.appId }}"
   DOCKUP_BITBUCKET_CLIENT_ID: "{{ .Values.bitbucket.clientId }}"
   DOCKUP_BITBUCKET_CLIENT_SECRET: "{{ .Values.bitbucket.clientSecret }}"
   DOCKUP_GOOGLE_CLIENT_ID: "{{ .Values.google.clientId }}"

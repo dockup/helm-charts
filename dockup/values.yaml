@@ -50,6 +50,11 @@ dockupBackend: "kubernetes"
 
 dockupSuperAdmins: "csv-of-admin-emails"
 
+github:
+  privateKeyBase64Encoded: "encode-pem-file-with-base64"
+  appName: "dockup-app-name"
+  appId: "dockup-app-id"
+
 bitbucket:
   clientId: "sample-client-id"
   clientSecret: "sample-client-secret"
