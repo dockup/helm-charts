@@ -28,3 +28,4 @@ data:
   SLACK_WEBHOOK_URL: "{{ .Values.slackWaitlistNotifications }}"
   ELIXIR_CLUSTER_COOKIE: "{{ .Values.elixirClusterCookie }}"
   DOCKUP_K8S_APP_NAME: "{{ template "dockup.name" . }}"
+  DOCKUP_ANALYTICS_ENABLED: "true"
