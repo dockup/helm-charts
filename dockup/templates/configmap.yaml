@@ -29,3 +29,4 @@ data:
   ELIXIR_CLUSTER_COOKIE: "{{ .Values.elixirClusterCookie }}"
   DOCKUP_K8S_APP_NAME: "{{ template "dockup.name" . }}"
   DOCKUP_ANALYTICS_ENABLED: "true"
+  TIMBER_API_KEY: "{{ .Values.timberApiKey }}"
