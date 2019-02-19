@@ -47,7 +47,26 @@ tolerations: []
 
 affinity: {}
 
+
+# NOTE: If you change any of namespaces or secrets, agent won't work because
+# these values are hardcoded for agent.
 namespaces:
   agent: "dockup"
   deploys: "dockup-deployments"
   imageBuilds: "dockup-image-builds"
+
+
+# https://github.com/helm/helm/blob/master/docs/charts_tips_and_tricks.md
+# https://github.com/Masterminds/sprig/tree/master/docs
+secrets:
+  pushSecretName: "dockup-push-secret"
+  pushServiceAccountKey:
+    projectId: "id-of-gcp-project"
+    privateKeyId: "private-key-id"
+    privateKey: "slash-n-separated-private-key"
+    clientEmail: "client-email"
+    clientId: "client-id"
+    authUri: "https://accounts.google.com/o/oauth2/auth"
+    tokenUri: "https://oauth2.googleapis.com/token"
+    authProviderX509CertUrl: "https://www.googleapis.com/oauth2/v1/certs"
+    clientX509CertUrl: "test-client-cert-url"

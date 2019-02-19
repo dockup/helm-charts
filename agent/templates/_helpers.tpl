@@ -30,3 +30,7 @@ Create chart name and version as used by the chart label.
 {{- define "agent.chart" -}}
 {{- printf "%s-%s" .Chart.Name .Chart.Version | replace "+" "_" | trunc 63 | trimSuffix "-" -}}
 {{- end -}}
+
+{{- define "pushServiceAccountSecret" }}
+{{- printf "{\"type\": \"service_account\", \"project_id\": \"%s\", \"private_key_id\": \"%s\", \"private_key\": \"%s\", \"client_email\": \"%s\", \"client_id\": \"%s\", \"auth_url\": \"%s\", \"token_uri\": \"%s\", \"auth_provider_x509_cert_url\": \"%s\", \"client_x509_cert_url\": \"%s\"}" .Values.secrets.pushServiceAccountKey.projectId .Values.secrets.pushServiceAccountKey.privateKeyId (.Values.secrets.pushServiceAccountKey.privateKey | replace "\n" "\\n") .Values.secrets.pushServiceAccountKey.clientEmail .Values.secrets.pushServiceAccountKey.clientId .Values.secrets.pushServiceAccountKey.authUri .Values.secrets.pushServiceAccountKey.tokenUri .Values.secrets.pushServiceAccountKey.authProviderX509CertUrl .Values.secrets.pushServiceAccountKey.clientX509CertUrl | b64enc }}
+{{- end }}
