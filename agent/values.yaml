@@ -46,3 +46,8 @@ nodeSelector: {}
 tolerations: []
 
 affinity: {}
+
+namespaces:
+  agent: "dockup"
+  deploys: "dockup-deployments"
+  imageBuilds: "dockup-image-builds"
