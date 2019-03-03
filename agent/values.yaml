@@ -30,6 +30,14 @@ tolerations: []
 
 affinity: {}
 
+# Secrets that agent needs for running itself
+agent:
+  dockupBackend: "fake"
+  dockupApiKey: "get-agent-key-from-settings"
+  dockupHost: "testdockup.com"
+  dockupWebsocketScheme: "wss"
+  dockupHttpScheme: "https"
+
 
 # NOTE: If you change any of namespaces or secrets, agent won't work because
 # these values are hardcoded for agent.
