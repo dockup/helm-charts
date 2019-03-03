@@ -1,0 +1,47 @@
+kind: ServiceAccount
+apiVersion: v1
+metadata:
+  name: {{ include "agent.fullname" . }}
+  namespace: {{ .Values.namespaces.agent }}
+---
+kind: Role
+apiVersion: rbac.authorization.k8s.io/v1
+metadata:
+  name: {{ template "agent.fullname" . }}
+  namespace: {{ .Values.namespaces.deploys }}
+rules:
+  - apiGroups:
+      - "extensions"
+      - "apps"
+      - ""
+    resources:
+      - namespaces
+      - deployments
+      - pods
+      - services
+      - ingresses
+      - secrets
+      - pods/log
+    verbs:
+      - list
+      - get
+      - create
+      - update
+      - patch
+      - delete
+      - watch
+      - deletecollection
+---
+kind: RoleBinding
+apiVersion: rbac.authorization.k8s.io/v1
+metadata:
+  name: {{ template "agent.fullname" . }}
+  namespace: {{ .Values.namespaces.deploys }}
+roleRef:
+  apiGroup: rbac.authorization.k8s.io
+  kind: Role
+  name: {{ template "agent.fullname" . }}
+subjects:
+- kind: ServiceAccount
+  name: {{ template "agent.fullname" . }}
+  namespace: {{ .Values.namespaces.agent }}
