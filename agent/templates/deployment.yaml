@@ -28,32 +28,32 @@ spec:
             - name: MIX_ENV
               valueFrom:
                 configMapKeyRef:
-                  name: {{ include "agent.fullname" . }}-secrets
+                  name: {{ include "agent.fullname" . }}
                   key: MIX_ENV
             - name: DOCKUP_BACKEND
               valueFrom:
                 configMapKeyRef:
-                  name: {{ include "agent.fullname" . }}-secrets
+                  name: {{ include "agent.fullname" . }}
                   key: DOCKUP_BACKEND
             - name: DOCKUP_API_KEY
               valueFrom:
-                configMapKeyRef:
-                  name: {{ include "agent.fullname" . }}-secrets
+                secretKeyRef:
+                  name: {{ include "agent.fullname" . }}
                   key: DOCKUP_API_KEY
             - name: DOCKUP_HOST
               valueFrom:
                 configMapKeyRef:
-                  name: {{ include "agent.fullname" . }}-secrets
+                  name: {{ include "agent.fullname" . }}
                   key: DOCKUP_HOST
             - name: DOCKUP_WEBSOCKET_SCHEME
               valueFrom:
                 configMapKeyRef:
-                  name: {{ include "agent.fullname" . }}-secrets
+                  name: {{ include "agent.fullname" . }}
                   key: DOCKUP_WEBSOCKET_SCHEME
             - name: DOCKUP_HTTP_SCHEME
               valueFrom:
                 configMapKeyRef:
-                  name: {{ include "agent.fullname" . }}-secrets
+                  name: {{ include "agent.fullname" . }}
                   key: DOCKUP_HTTP_SCHEME
           resources:
             {{- toYaml .Values.resources | nindent 12 }}

@@ -35,8 +35,8 @@ agent:
   dockupBackend: "fake"
   dockupApiKey: "get-agent-key-from-settings"
   dockupHost: "testdockup.com"
-  dockupWebsocketScheme: "wss"
-  dockupHttpScheme: "https"
+  dockupWebsocketScheme: "wss://"
+  dockupHttpScheme: "https://"
 
 
 # NOTE: If you change any of namespaces or secrets, agent won't work because
