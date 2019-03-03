@@ -44,7 +44,6 @@ agent:
 namespaces:
   agent: "dockup"
   deploys: "dockup-deployments"
-  imageBuilds: "dockup-image-builds"
 
 
 # https://github.com/helm/helm/blob/master/docs/charts_tips_and_tricks.md

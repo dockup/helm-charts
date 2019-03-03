@@ -17,13 +17,3 @@ metadata:
     helm.sh/chart: {{ include "agent.chart" . }}
     app.kubernetes.io/instance: {{ .Release.Name }}
     app.kubernetes.io/managed-by: {{ .Release.Service }}
----
-apiVersion: v1
-kind: Namespace
-metadata:
-  name: {{ .Values.namespaces.imageBuilds }}
-  labels:
-    app.kubernetes.io/name: {{ include "agent.name" . }}
-    helm.sh/chart: {{ include "agent.chart" . }}
-    app.kubernetes.io/instance: {{ .Release.Name }}
-    app.kubernetes.io/managed-by: {{ .Release.Service }}
