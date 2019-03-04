@@ -49,6 +49,7 @@ namespaces:
 # https://github.com/helm/helm/blob/master/docs/charts_tips_and_tricks.md
 # https://github.com/Masterminds/sprig/tree/master/docs
 secrets:
+  pushSecretEnabled: false
   pushSecretName: "dockup-push-secret"
   pushServiceAccountKey:
     projectId: "id-of-gcp-project"
@@ -60,6 +61,7 @@ secrets:
     tokenUri: "https://oauth2.googleapis.com/token"
     authProviderX509CertUrl: "https://www.googleapis.com/oauth2/v1/certs"
     clientX509CertUrl: "test-client-cert-url"
+  pullSecretEnabled: false
   pullSecretName: "dockup-pull-secret"
   pullServiceAccountKey:
     projectId: "id-of-gcp-project"
