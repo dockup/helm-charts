@@ -32,9 +32,9 @@ affinity: {}
 
 # Secrets that agent needs for running itself
 agent:
-  dockupBackend: "fake"
+  dockupBackend: "kubernetes"
   dockupApiKey: "get-agent-key-from-settings"
-  dockupHost: "testdockup.com"
+  dockupHost: "getdockup.com"
   dockupWebsocketScheme: "wss://"
   dockupHttpScheme: "https://"
 
