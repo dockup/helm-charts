@@ -3,11 +3,20 @@ entries:
   agent:
   - apiVersion: v1
     appVersion: "1.0"
-    created: 2019-03-03T19:26:23.40984-08:00
+    created: 2019-03-05T01:26:08.113832-08:00
+    description: A Helm chart for Kubernetes
+    digest: 8ee3a375c3ad0cbd5299b8ca720536b9f876e98db38427846b9d74ccb28994eb
+    name: agent
+    urls:
+    - https://helm-charts.getdockup.com/agent-0.2.0.tgz
+    version: 0.2.0
+  - apiVersion: v1
+    appVersion: "1.0"
+    created: 2019-03-05T01:26:08.113169-08:00
     description: A Helm chart for Kubernetes
     digest: c4fa433c251075e393c7e370b638dbe0e5d8eac2ad8bf519c4b292971e242624
     name: agent
     urls:
     - https://helm-charts.getdockup.com/agent-0.1.0.tgz
     version: 0.1.0
-generated: 2019-03-03T19:26:23.398332-08:00
+generated: 2019-03-05T01:26:08.109913-08:00
