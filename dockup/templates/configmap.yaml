@@ -34,4 +34,5 @@ data:
   DOCKUP_K8S_APP_NAME: "{{ template "dockup.name" . }}"
   DOCKUP_ANALYTICS_ENABLED: "true"
   DOCKUP_SEGMENT_WRITE_KEY: "{{ .Values.segmentWriteKey }}"
+  DOCKUP_ENABLE_EMAIL_CONFIRMATION: "{{ .Values.enableEmailConfirmation }}"
   TIMBER_API_KEY: "{{ .Values.timberApiKey }}"

@@ -100,3 +100,6 @@ cloudsql:
   user: dockup-pg-user
   password: dockup-pg-secret
   host: dockup-pg-host
+
+# Email confirmation for users
+enableEmailConfirmation: true
