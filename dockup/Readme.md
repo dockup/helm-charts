@@ -9,10 +9,10 @@ as many as you want!
 To install the chart with the release name `my-release`:
 
 ```bash
-$ helm repo add c9s https://helm-charts.c9s.tech
+$ helm repo add dockup https://helm-charts.getdockup.com
 $ helm repo update
 
-$ helm install c9s/dockup --name my-dockup
+$ helm install dockup/dockup --name my-dockup
 ```
 
 ## Uninstalling the Chart
@@ -43,11 +43,11 @@ Specify each parameter using the `--set key=value[,key=value]` argument to `helm
 
 ```bash
 $ helm install --name my-release \
-  --set baseDomain.enabled=dockup.acme.com c9s/dockup
+  --set baseDomain.enabled=dockup.acme.com dockup/dockup
 ```
 Alternatively, a YAML file that specifies the values for the parameters can
 be provided while installing the chart. For example:
 
 ```bash
-$ helm install --name my-release --values values.yaml c9s/dockup
+$ helm install --name my-release --values values.yaml dockup/dockup
 ```

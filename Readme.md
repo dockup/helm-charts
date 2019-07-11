@@ -36,7 +36,7 @@ requirements, we would be more than happy to help out.
 Now add codemancers chart repository to your helm config
 
 ~~~
-helm repo add c9s https://helm-charts.c9s.tech
+helm repo add dockup https://helm-charts.getdockup.com
 ~~~
 
 Time to time, its advised to update helm repository caches
@@ -51,7 +51,7 @@ helm repo update
 After adding a new helm repository, install dockup as helm package
 
 ~~~sh
-> helm install --name=dockup c9s/dockup
+> helm install --name=dockup dockup/dockup
 ~~~
 
 The above commands installs postgresql required by dockup
@@ -61,7 +61,7 @@ external world. Also, its recommended to set custom values in yaml
 file, say `dockup.yaml` and then install dockup.
 
 ~~~sh
-> helm install -f dockup.yaml --name=dockup c9s/dockup
+> helm install -f dockup.yaml --name=dockup dockup/dockup
 ~~~
 
 #### Installing db-pool
@@ -71,7 +71,7 @@ connected to dockup deployments. This saves time when it comes to
 spinning up new testing sites.
 
 ~~~sh
-> helm install --name=db-pool c9s/db-pool
+> helm install --name=db-pool dockup/db-pool
 ~~~
 
 The above commands installs postgresql required by db-pool, and mysql.
@@ -81,7 +81,7 @@ Its recommended to set all these values in yaml file, say `db-pool.yaml`
 and then install it
 
 ~~~sh
-> helm install -f db-pool.yaml --name=db-pool c9s/db-pool
+> helm install -f db-pool.yaml --name=db-pool dockup/db-pool
 ~~~
 
 #### Installing dockup agent
