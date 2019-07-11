@@ -1,0 +1,72 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: {{ include "agent.fullname" . }}
+  namespace: {{ .Values.namespaces.agent }}
+  labels:
+    app.kubernetes.io/name: {{ include "agent.name" . }}
+    helm.sh/chart: {{ include "agent.chart" . }}
+    app.kubernetes.io/instance: {{ .Release.Name }}
+    app.kubernetes.io/managed-by: {{ .Release.Service }}
+spec:
+  replicas: {{ .Values.replicaCount }}
+  selector:
+    matchLabels:
+      app.kubernetes.io/name: {{ include "agent.name" . }}
+      app.kubernetes.io/instance: {{ .Release.Name }}
+  template:
+    metadata:
+      labels:
+        app.kubernetes.io/name: {{ include "agent.name" . }}
+        app.kubernetes.io/instance: {{ .Release.Name }}
+    spec:
+      serviceAccountName: {{ template "agent.fullname" . }}
+      containers:
+        - name: {{ .Chart.Name }}
+          image: "{{ .Values.image.repository }}:{{ .Values.image.tag }}"
+          imagePullPolicy: {{ .Values.image.pullPolicy }}
+          env:
+            - name: MIX_ENV
+              valueFrom:
+                configMapKeyRef:
+                  name: {{ include "agent.fullname" . }}
+                  key: MIX_ENV
+            - name: DOCKUP_BACKEND
+              valueFrom:
+                configMapKeyRef:
+                  name: {{ include "agent.fullname" . }}
+                  key: DOCKUP_BACKEND
+            - name: DOCKUP_API_KEY
+              valueFrom:
+                secretKeyRef:
+                  name: {{ include "agent.fullname" . }}
+                  key: DOCKUP_API_KEY
+            - name: DOCKUP_HOST
+              valueFrom:
+                configMapKeyRef:
+                  name: {{ include "agent.fullname" . }}
+                  key: DOCKUP_HOST
+            - name: DOCKUP_WEBSOCKET_SCHEME
+              valueFrom:
+                configMapKeyRef:
+                  name: {{ include "agent.fullname" . }}
+                  key: DOCKUP_WEBSOCKET_SCHEME
+            - name: DOCKUP_HTTP_SCHEME
+              valueFrom:
+                configMapKeyRef:
+                  name: {{ include "agent.fullname" . }}
+                  key: DOCKUP_HTTP_SCHEME
+          resources:
+            {{- toYaml .Values.resources | nindent 12 }}
+      {{- with .Values.nodeSelector }}
+      nodeSelector:
+        {{- toYaml . | nindent 8 }}
+      {{- end }}
+    {{- with .Values.affinity }}
+      affinity:
+        {{- toYaml . | nindent 8 }}
+    {{- end }}
+    {{- with .Values.tolerations }}
+      tolerations:
+        {{- toYaml . | nindent 8 }}
+    {{- end }}

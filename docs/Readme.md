@@ -11,16 +11,19 @@ NOTE: Bump up chart versions in `Chart.yaml` before proceeding.
 ~~~sh
 # First create zip files for charts
 cd /path/to/cloned/repo/of/helm-charts
+
 helm package dockup
 helm package db-pool
+helm package agent
 
 # Now move generated packages to docs folder
 mv dockup-*.tgz docs
 mv db-pool-*.tgz docs
+mv agent-*.tgz docs
 
 # Update index file in docs folder
 cd docs
-helm repo index --url=https://helm-charts.c9s.tech .
+helm repo index --url=https://helm-charts.getdockup.com .
 ~~~
 
 

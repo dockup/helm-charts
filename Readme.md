@@ -83,3 +83,21 @@ and then install it
 ~~~sh
 > helm install -f db-pool.yaml --name=db-pool c9s/db-pool
 ~~~
+
+#### Installing dockup agent
+
+After adding a new helm repository, install dockup as helm package
+
+~~~sh
+> helm install --name=dockup-agent dockup/agent
+~~~
+
+The above commands installs postgresql required by dockup
+
+You need to have traefik or nginx ingress in order to expose dockup to
+external world. Also, its recommended to set custom values in yaml
+file, say `agent.yaml` and then install dockup.
+
+~~~sh
+> helm install -f agent.yaml --name=dockup-agent dockup/agent
+~~~
