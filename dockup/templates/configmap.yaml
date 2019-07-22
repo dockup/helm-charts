@@ -36,3 +36,4 @@ data:
   DOCKUP_SEGMENT_WRITE_KEY: "{{ .Values.segmentWriteKey }}"
   DOCKUP_ENABLE_EMAIL_CONFIRMATION: "{{ .Values.enableEmailConfirmation }}"
   TIMBER_API_KEY: "{{ .Values.timberApiKey }}"
+  DOCKUP_DEMO_ENABLED: "{{ .Values.demoEnabled }}"

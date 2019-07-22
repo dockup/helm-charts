@@ -103,3 +103,6 @@ cloudsql:
 
 # Email confirmation for users
 enableEmailConfirmation: true
+
+# Demo for dockup
+demoEnabled: false
