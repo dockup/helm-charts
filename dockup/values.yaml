@@ -55,10 +55,6 @@ github:
   appName: "dockup-app-name"
   appId: "dockup-app-id"
 
-bitbucket:
-  clientId: "sample-client-id"
-  clientSecret: "sample-client-secret"
-
 google:
   clientId: "sample-client-id"
   clientSecret: "sample-client-secret"

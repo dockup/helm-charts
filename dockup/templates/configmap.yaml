@@ -14,8 +14,6 @@ data:
   DOCKUP_GITHUB_PRIVATE_KEY_BASE64_ENCODED: "{{ .Values.github.privateKeyBase64Encoded }}"
   DOCKUP_GITHUB_APP_NAME: "{{ .Values.github.appName }}"
   DOCKUP_GITHUB_APP_ID: "{{ .Values.github.appId }}"
-  DOCKUP_BITBUCKET_CLIENT_ID: "{{ .Values.bitbucket.clientId }}"
-  DOCKUP_BITBUCKET_CLIENT_SECRET: "{{ .Values.bitbucket.clientSecret }}"
   DOCKUP_GOOGLE_CLIENT_ID: "{{ .Values.google.clientId }}"
   DOCKUP_GOOGLE_CLIENT_SECRET: "{{ .Values.google.clientSecret }}"
   DOCKUP_GCP_PROJECT_ID: "{{ .Values.google.gcpProjectId }}"
