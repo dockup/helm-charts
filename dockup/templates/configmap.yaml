@@ -25,7 +25,6 @@ data:
   ROLLBAR_ACCESS_TOKEN: "{{ .Values.rollbarAccessToken }}"
   ROLLBAR_CLIENT_KEY: "{{ .Values.rollbarClientKey }}"
   INTERCOM_SECRET_KEY: "{{ .Values.intercomSecretKey }}"
-  DOCKUP_GANDIV5_API_KEY: "{{ .Values.gandiv5ApiKey }}"
   SLACK_WEBHOOK_URL: "{{ .Values.slackWaitlistNotifications }}"
   DOCKUP_SUPPORT_SLACK_WEBHOOK_URL: "{{ .Values.slackSupportNotifications }}"
   ELIXIR_CLUSTER_COOKIE: "{{ .Values.elixirClusterCookie }}"

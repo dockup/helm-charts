@@ -75,9 +75,6 @@ rollbarClientKey: "rollbar-client-key"
 # For customer support
 intercomSecretKey: "intercom-secret-key"
 
-# For certs
-gandiv5ApiKey: "gandiv5-api-key"
-
 # For sending waitlist notifications to slack
 slackWaitlistNotifications: "slack-waitlist-notifications"
 slackSupportNotifications: "slack-support-notifications"
