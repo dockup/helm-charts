@@ -115,7 +115,7 @@ docker auth.
 
 
 ```
-export json_key=`cat path-to-api-json | base64`
+export json_key=$(echo _json_key:$(cat path-to-api-json) | base64)
 printf '{"auths": {"gcr.io":{"auth":"%s"}}}' $json_key | base64
 ```
 
