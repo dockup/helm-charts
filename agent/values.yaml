@@ -61,15 +61,5 @@ secrets:
     tokenUri: "https://oauth2.googleapis.com/token"
     authProviderX509CertUrl: "https://www.googleapis.com/oauth2/v1/certs"
     clientX509CertUrl: "test-client-cert-url"
-  pullSecretEnabled: false
   pullSecretName: "dockup-pull-secret"
-  pullServiceAccountKey:
-    projectId: "id-of-gcp-project"
-    privateKeyId: "private-key-id"
-    privateKey: "slash-n-separated-private-key"
-    clientEmail: "client-email"
-    clientId: "client-id"
-    authUri: "https://accounts.google.com/o/oauth2/auth"
-    tokenUri: "https://oauth2.googleapis.com/token"
-    authProviderX509CertUrl: "https://www.googleapis.com/oauth2/v1/certs"
-    clientX509CertUrl: "test-client-cert-url"
+  pullSecretBase64: "see-readme-for-more-details"

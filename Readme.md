@@ -101,3 +101,24 @@ file, say `agent.yaml` and then install dockup.
 ~~~sh
 > helm install -f agent.yaml --name=dockup-agent dockup/agent
 ~~~
+
+
+##### GKE pull secrets
+
+https://stackoverflow.com/questions/36283660/creating-image-pull-secret-for-google-container-registry-that-doesnt-expire
+
+In order to pull images from private GCP registry, you need to download API
+credentials for service account, and encode them, and provide it to the agent
+chart. GCP credentials consist of `project_id`, `private_key_id`, `private_key`
+etc. Download that file, and base64 encode that file. Once encoded, create
+docker auth.
+
+
+```
+export json_key=`cat path-to-api-json | base64`
+printf '{"auths": {"gcr.io":{"auth":"%s"}}}' $json_key | base64
+```
+
+Take the output of second line and feed it to this helm chart as
+`pullSecretBase64`. Now agent should be able to pull images from your private
+repository.
