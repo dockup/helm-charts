@@ -21,6 +21,7 @@ rules:
       - services
       - ingresses
       - secrets
+      - persistentvolumeclaims
       - pods/log
     verbs:
       - list
@@ -44,4 +45,38 @@ roleRef:
 subjects:
 - kind: ServiceAccount
   name: {{ template "agent.fullname" . }}
+  namespace: {{ .Values.namespaces.agent }}
+---
+kind: ClusterRole
+apiVersion: rbac.authorization.k8s.io/v1
+metadata:
+  name: {{ include "agent.fullname" . }}
+rules:
+  - apiGroups:
+      - "extensions"
+      - "apps"
+      - ""
+    resources:
+      - persistentvolumes
+    verbs:
+      - list
+      - get
+      - create
+      - update
+      - patch
+      - delete
+      - watch
+      - deletecollection
+---
+kind: ClusterRoleBinding
+apiVersion: rbac.authorization.k8s.io/v1
+metadata:
+  name: {{ include "agent.fullname" . }}
+roleRef:
+  apiGroup: rbac.authorization.k8s.io
+  kind: ClusterRole
+  name: {{ include "agent.fullname" . }}
+subjects:
+- kind: ServiceAccount
+  name: {{ include "agent.fullname" . }}
   namespace: {{ .Values.namespaces.agent }}
