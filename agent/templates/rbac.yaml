@@ -58,6 +58,7 @@ rules:
       - ""
     resources:
       - persistentvolumes
+      - persistentvolumes/status
     verbs:
       - list
       - get
