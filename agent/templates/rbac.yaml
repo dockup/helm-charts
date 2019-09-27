@@ -21,6 +21,7 @@ rules:
       - services
       - ingresses
       - secrets
+      - events
       - persistentvolumeclaims
       - pods/log
     verbs:
