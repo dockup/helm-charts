@@ -63,3 +63,7 @@ secrets:
     clientX509CertUrl: "test-client-cert-url"
   pullSecretName: "dockup-pull-secret"
   pullSecretBase64: "see-readme-for-more-details"
+
+# Add timber for logging
+timberSourceId: "timber-source-id"
+timberApiKey: "timber-api-key"
