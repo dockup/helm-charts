@@ -56,6 +56,16 @@ spec:
                 configMapKeyRef:
                   name: {{ include "agent.fullname" . }}
                   key: DOCKUP_HTTP_SCHEME
+            - name: TIMBER_SOURCE_ID
+              valueFrom:
+                secretKeyRef:
+                  name: {{ include "agent.fullname" . }}
+                  key: TIMBER_SOURCE_ID
+            - name: TIMBER_API_KEY
+              valueFrom:
+                secretKeyRef:
+                  name: {{ include "agent.fullname" . }}
+                  key: TIMBER_API_KEY
           resources:
             {{- toYaml .Values.resources | nindent 12 }}
       {{- with .Values.nodeSelector }}
